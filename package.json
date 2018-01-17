@@ -1,0 +1,24 @@
+{
+  "name": "test-a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "rm -rf node_modules .git && git init -q && git add . && git commit -m 'ddd' && cnpm cache clean --force && cnpm install --save-dev  && git add . && git commit -m 'test-add'",
+    "precommit-msg": "echo \"\u001b[\"32\"m\"\"<<< 蘑菇租房前端“语法规范”自动提交扫描 ... >>>\"\"\u001b[0m\" && exit 0 ",
+    "eslint": "npm run precommit-msg && /bin/bash ./node_modules/pre-commit-hooks/shell/eslint.sh",
+    "eslint-help": "/bin/bash ./node_modules/pre-commit-hooks/shell/eslint.sh help",
+    "eslint-fix": "npm run precommit-msg && /bin/bash ./node_modules/pre-commit-hooks/shell/eslint.sh fix",
+    "eslint-fixdryrun": "npm run precommit-msg && /bin/bash ./node_modules/pre-commit-hooks/shell/eslint.sh fix-dry-run",
+    "eslint-desc": "npm run precommit-msg && /bin/bash ./node_modules/pre-commit-hooks/shell/eslint.sh desc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "pre-commit-hooks": "git+https://github.com/rockywu/pre-commit-hooks.git#test"
+  },
+  "pre-commit": [
+    "eslint"
+  ]
+}
